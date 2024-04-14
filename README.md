@@ -1,2 +1,11 @@
-# movie_recommendation
-This repository contains the frontend and backend code for movie recommendation system
+# Movie recommendation system
+
+# Setup
+- Execute below command to setup.
+
+    `pip install -r requirements.txt`
+
+- Execute ``
+
+# References
+- youtube : https://www.youtube.com/watch?v=kuC38ZCcbZI
