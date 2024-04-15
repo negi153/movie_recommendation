@@ -2,8 +2,14 @@
 This is a movie recommendation system which is built on 10000 movies taken from Kaggle.
 Dataset is stored in the CSV (Comma seperated values) file.
 
-# Setup
-- Execute below command to setup.
+![Python 3.9](https://img.shields.io/badge/Python-3.9-brightgreen.svg) 
+![scikit-learnn](https://img.shields.io/badge/Library-Scikit_Learn-orange.svg)
+![Framework](https://img.shields.io/badge/Framework-Flask-red)
+![Frontend](https://img.shields.io/badge/Frontend-HTML/CSS/JS-yellow)
+
+# Installation
+- Install Python3.10
+- Execute below command to install dependency modules.
 
     `pip install -r requirements.txt`
 
