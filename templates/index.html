@@ -3,30 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
     <title>Movie Recommendation System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="container">
+
+    <div class="main-container">
         <h1>Movie Recommendation System</h1>
-        <form action="/recommendations" method="POST">
-            <label for="movie_name">Select a movie:</label>
-            <select id="movie_name" name="movie_name">
-                {% for movie in all_movies %}
-                    <option value="{{ movie }}">{{ movie }}</option>
-                {% endfor %}
-            </select>
-            <br> <br> <br>
-            <button type="submit">Get Recommendations</button>
-        </form>
-        <div class="recommendations">
-            <h2>Recommendations:</h2>
-            <ul>
-                {% for movie in recommended_movies %}
-                    <li>{{ movie }}</li>
-                {% endfor %}
-            </ul>
+
+        <div class="form-container">
+            <form action="/recommendations" method="POST">
+                <label for="movie_name">Select a movie:</label> 
+                <br>
+                <select id="movie_name" name="movie_name" >
+                    {% for movie in all_movies %}
+                        <option value="{{ movie }}">{{ movie }}</option>
+                    {% endfor %}
+                </select>
+                <br> <br>
+                <button type="submit">Get Recommendations</button>
+            </form>    
         </div>
+
+        <!-- <div class="response-container">
+            <div class="recommendations">
+                <h2>Recommendations:</h2>
+                <ul>
+                    {% for movie in recommended_movies %}
+                        <li>{{ movie }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div> -->
+        
+        <div class="response-container">
+            <div class="recommendations">
+                <ul>
+                    {% for movie in recommended_movies %}
+                        <li>
+
+                            <!-- <div class="single-movie"> -->
+
+                                <img src="{{movie[1]}}" alt="">
+                                
+                                <h3>{{movie[0]}}</h3>
+
+                            <!-- </div> -->
+                        </li>
+                        
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
     </div>
+    
 </body>
 </html>

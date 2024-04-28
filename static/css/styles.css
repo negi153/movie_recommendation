@@ -1,53 +1,70 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+body{
+    background-color: black;
+    padding: 30px 200px 200px 200px;
+    color: white;
+    font-size: 25px;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+.main-container h1 {
+    font-size: 50px;
 }
 
-/* input[type="text"] {
-    padding: 8px;
-    width: 60%;
-    margin: 10px 0;
-} */
-
-select option {
-    padding: 8px;
-    width: 60%;
-    margin: 10px 0;
+button{
+    font-size: 20px;
+    color: white;
+    padding: 15px;
+    background: black;
+    /* background: #242830; */
+    border: solid 1px #242830;
+    border-radius: 7px;
 }
 
-button {
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+button:hover{
+    background: #242830;
 }
 
-button:hover {
-    background-color: #0056b3;
+.form-container label{
+    padding-bottom: 20px;
 }
 
-.recommendations {
+.form-container select{
+    font-size: 18px;
+    background-color: #242830;
+    color: white;
+    padding: 15px;
     margin-top: 20px;
 }
 
-.recommendations ul {
-    list-style-type: none;
-    padding: 0;
+/* .form-container select option{
+    padding: 5px;
 }
+ */
+
+ /* .response-container .recommendations ul li{
+    display: inline;
+ } */
+
+.recommendations ul{
+    padding: 0;
+ }
 
 .recommendations li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    width: 200px;
+    /* height: 70px; */
+    /* margin: 20px 20px ; */
+    /* border: 1px solid red; */
+    margin-right: 30px;
+    /* margin-top: 20px; */
+ }
+
+ .recommendations li img{
+    width: 200px;
+    height: auto;
+}
+
+.recommendations li h3{
+   margin-top: 5px;
+   font-size: 18px;
+   text-align: left;
 }

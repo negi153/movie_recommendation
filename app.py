@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import pickle
+import requests
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def create_movie_recommended_system():
     movies = movies[['id', 'title', 'genre', 'overview']]
 
     # combine overview and genre column
-    movies['tags'] = movies['overview'] + movies['genre']  
+    movies['tags'] = movies['title'] + movies['overview'] + movies['genre']  
 
     # delete unnecessary columns
     movies_new_data = movies.drop(columns=['overview', 'genre'])
@@ -35,6 +36,20 @@ movies_data, similarity = create_movie_recommended_system()
 # movies_data = pickle.load(open(r'NLP_model/movies.pkl','rb'))
 # similarity = pickle.load(open(r'NLP_model/movies_similarity.pkl','rb'))
 
+def fetch_movie_url(movie_id):
+    '''
+        This method gets the poster of movies
+    '''
+    
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=2bf71125b4aeeff9bdc25e091efcb1f7"
+    data = requests.get(url)
+
+    data = data.json()
+    poster_path = data['poster_path']
+
+    return "https://image.tmdb.org/t/p/w500" + poster_path
+
+
 # Dummy movie recommendation function
 def get_movie_recommendations(movie_name):
     
@@ -45,9 +60,14 @@ def get_movie_recommendations(movie_name):
     distance = sorted(list(enumerate(similarity[index])), reverse = True, key = lambda vector:vector[1])
     
     recommendations = []
-    for i in distance[0:5]:
+    for i in distance[1:6]:
         # print(movies_data.iloc[i[0]].title)
-        recommendations.append(movies_data.iloc[i[0]].title)
+        
+        # movie_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/182px-Python-logo-notext.svg.png'
+
+        movie_url = fetch_movie_url(movies_data.iloc[i[0]].id)
+
+        recommendations.append((movies_data.iloc[i[0]].title,movie_url))
 
     return recommendations
 

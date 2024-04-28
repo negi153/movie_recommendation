@@ -21,8 +21,9 @@ Dataset is stored in the CSV (Comma seperated values) file.
 # Technology used
 - Front end - HTML, CSS
 - Backend - Flask, Machine Learning, NLP
-- Development editor - Jupyter notebook
+- Development editor - VS Code, Jupyter notebook
     
 # References
 - youtube : https://www.youtube.com/watch?v=kuC38ZCcbZI
 - Dataset : https://www.kaggle.com/datasets/ahsanaseer/top-rated-tmdb-movies-10k?fbclid=IwAR2MpWrWpcw2QNCv_FZg2l0sjBh9xAvhrqtnZBO9K-QS6PHI1aHkdB6qLa0
+- Movie Posters : https://www.themoviedb.org/
