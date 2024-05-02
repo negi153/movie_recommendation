@@ -8,7 +8,7 @@ import requests
 
 app = Flask(__name__)
 
-def create_movie_recommended_system():
+def create_movie_recommendation_system():
     # read data
     movies = pd.read_csv(r'dataset/top10K-TMDB-movies.csv')
 
@@ -30,13 +30,13 @@ def create_movie_recommended_system():
 
     return movies_new_data, similarity
 
-movies_data, similarity = create_movie_recommended_system()
+movies_data, similarity = create_movie_recommendation_system()
 
 # # Reading data from pickle file
 # movies_data = pickle.load(open(r'NLP_model/movies.pkl','rb'))
 # similarity = pickle.load(open(r'NLP_model/movies_similarity.pkl','rb'))
 
-def fetch_movie_url(movie_id):
+def fetch_movie_poster(movie_id):
     '''
         This method gets the poster of movies
     '''
@@ -65,7 +65,7 @@ def get_movie_recommendations(movie_name):
         
         # movie_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/182px-Python-logo-notext.svg.png'
 
-        movie_url = fetch_movie_url(movies_data.iloc[i[0]].id)
+        movie_url = fetch_movie_poster(movies_data.iloc[i[0]].id)
 
         recommendations.append((movies_data.iloc[i[0]].title,movie_url))
 
