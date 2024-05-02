@@ -8,6 +8,7 @@ Dataset is stored in the CSV (Comma seperated values) file.
 ![Frontend](https://img.shields.io/badge/Frontend-HTML/CSS/JS-yellow)
 
 # Preview
+https://github.com/negi153/movie_recommendation/assets/27079205/d128c43c-31af-41d4-83c6-cbc8434066a9
 
 # Installation
 - Install Python3.10
