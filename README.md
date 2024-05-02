@@ -7,6 +7,8 @@ Dataset is stored in the CSV (Comma seperated values) file.
 ![Framework](https://img.shields.io/badge/Framework-Flask-red)
 ![Frontend](https://img.shields.io/badge/Frontend-HTML/CSS/JS-yellow)
 
+# Preview
+
 # Installation
 - Install Python3.10
 - Execute below command to install dependency modules.
